@@ -34,7 +34,6 @@
 			<version>42.2.20</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
