@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 /**
  * 
- * @author Vaman Deshmukh
+ * @author Vaman Deshmukh 
  *
  */
 
@@ -16,6 +16,9 @@ import javax.persistence.Persistence;
 // 1. hibernate - tool / implementation 
 // 2. toplink - tool / implementation 
 // 3. ibatis - tool / implementation 
+
+// SQL - interacts with DB 
+// HQL JPQL 
 
 public class App {
 	public static void main(String[] args) {

@@ -14,12 +14,15 @@ public class JpqlDemo {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("abc");
 		EntityManager manager = emf.createEntityManager();
 		manager.getTransaction().begin();
-		Query query = manager.createQuery("FROM Employee");
+
+//		Query query = manager.createQuery("SELECT * FROM my_emp_table;"); // CE - SQL Query 
+		Query query = manager.createQuery("FROM Employee"); // JPQL , HQL
+
 		List<Employee> empList = query.getResultList();
 
-		for (Employee e : empList)
-			System.out.println(e.toString());
+		for (Employee emp : empList)
+			System.out.println(emp.toString());
+
 		System.out.println("End");
 	}
-
 }
