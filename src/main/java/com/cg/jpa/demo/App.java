@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 /**
  * 
- * @author Vaman Deshmukh 
+ * @author Vaman Deshmukh
  *
  */
 
@@ -31,16 +31,16 @@ public class App {
 		System.out.println("insert - persist()");
 		Employee emp = new Employee(101, "Sonu");
 		manager.persist(emp);
-		System.out.println(manager.find(Employee.class, 101).toString());
-		Employee emp2 = new Employee(55, "Zzz");
+		System.out.println(manager.find(Employee.class, emp.getEid()).toString());
+		Employee emp2 = new Employee(102, "Xxx");
 		manager.persist(emp2);
 		System.out.println(manager.find(Employee.class, emp2.getEid()).toString());
-		Employee emp3 = new Employee(56, "Zzz");
+		Employee emp3 = new Employee(103, "Zzz");
 		manager.persist(emp3);
 		System.out.println(manager.find(Employee.class, emp3.getEid()).toString());
 
 		System.out.println("update - merge()");
-		Employee emp4 = new Employee(102, "Monu");
+		Employee emp4 = new Employee(104, "Monu");
 		manager.persist(emp4);
 		System.out.println(manager.find(Employee.class, emp4.getEid()).toString());
 		emp4.setEname("Tonu");
@@ -48,7 +48,7 @@ public class App {
 		System.out.println(manager.find(Employee.class, emp4.getEid()).toString());
 
 		System.out.println("delete - remove()");
-		Employee emp5 = new Employee(103, "Ponu");
+		Employee emp5 = new Employee(105, "Ponu");
 		manager.persist(emp5);
 		System.out.println(manager.find(Employee.class, emp5.getEid()).toString());
 		manager.remove(emp5);
