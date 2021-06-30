@@ -25,7 +25,7 @@ public class App {
 		EntityManager manager = emf.createEntityManager();
 		manager.getTransaction().begin();
 
-		// insert - persist()
+		System.out.println("insert - persist()");
 		Employee emp = new Employee(101, "Sonu");
 		manager.persist(emp);
 		System.out.println(manager.find(Employee.class, 101).toString());
@@ -36,21 +36,21 @@ public class App {
 		manager.persist(emp3);
 		System.out.println(manager.find(Employee.class, emp3.getEid()).toString());
 
-		// update - merge()
+		System.out.println("update - merge()");
 		Employee emp4 = new Employee(102, "Monu");
+		manager.persist(emp4);
 		System.out.println(manager.find(Employee.class, emp4.getEid()).toString());
 		emp4.setEname("Tonu");
 		manager.merge(emp4);
 		System.out.println(manager.find(Employee.class, emp4.getEid()).toString());
 
-		// delete - remove()
+		System.out.println("delete - remove()");
 		Employee emp5 = new Employee(103, "Ponu");
 		manager.persist(emp5);
 		System.out.println(manager.find(Employee.class, emp5.getEid()).toString());
 		manager.remove(emp5);
 		if (null == manager.find(Employee.class, emp5.getEid()))
 			System.out.println("Removed");
-
 		manager.getTransaction().commit();
 		System.out.println("End");
 	}
