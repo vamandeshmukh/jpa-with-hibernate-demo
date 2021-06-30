@@ -16,7 +16,7 @@ public class JpqlDemo {
 		manager.getTransaction().begin();
 
 //		Query query = manager.createQuery("SELECT * FROM my_emp_table;"); // CE - SQL Query 
-		Query query = manager.createQuery("FROM Employee"); // JPQL , HQL
+		Query query = manager.createQuery("FROM Employee ORDER BY eid"); // JPQL , HQL
 
 		List<Employee> empList = query.getResultList();
 
